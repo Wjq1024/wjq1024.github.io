@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>登录与注册页面</title>
+  <style>
+    body {
+      font-family: Microsoft YaHei, sans-serif;
+      background-color: #f1f1f1;
+    }
+
+    .container {
+      background-color: #ffffff;
+      max-width: 500px;
+      margin: 50px auto;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    input[type="text"], input[type="password"] {
+      padding: 10px;
+      margin-bottom: 10px;
+      border-radius: 5px;
+      border: none;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    }
+
+    input[type="submit"] {
+      background-color: #007bff;
+      color: #fff;
+      padding: 10px;
+      border-radius: 5px;
+      border: none;
+      cursor: pointer;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #0069d9;
+    }
+
+    #register-form {
+      display: none;
+    }
+
+    .toggle-form {
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    .toggle-form a {
+      color: #007bff;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <form id="login-form">
+    <h2>用户登录</h2>
+    <input type="text" id="login-username" placeholder="用户名">
+    <input type="password" id="login-password" placeholder="密码">
+    <input type="submit" value="登录">
+    <div class="toggle-form">
+      还没有账号？<a href="#" onclick="toggleForm()">点此注册</a>
+    </div>
+  </form>
+  <form id="register-form">
+    <h2>用户注册</h2>
+    <input type="text" id="register-username" placeholder="用户名">
+    <input type="password" id="register-password" placeholder="密码">
+    <input type="submit" value="注册">
+    <div class="toggle-form">
+      已有账号？<a href="#" onclick="toggleForm()">点此登录</a>
+    </div>
+  </form>
+</div>
+<script>
+  function toggleForm() {
+    var loginForm = document.getElementById("login-form");
+    var registerForm = document.getElementById("register-form");
+    if (loginForm.style.display === "none") {
+      loginForm.style.display = "block";
+      registerForm.style.display = "none";
+    } else {
+      loginForm.style.display = "none";
+      registerForm.style.display = "block";
+    }
+  }
+</script>
+</body>
+</html>
